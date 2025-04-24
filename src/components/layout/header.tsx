@@ -4,8 +4,8 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <header className="fixed top-0 left-0 w-full bg-white border-b z-50">
-      <div className="h-[60px] px-6 flex items-center justify-between mx-auto max-w-[1200px]">
+    <header className="fixed top-0 left-0 w-full bg-white border-b border-gray-300 z-50">
+      <div className="h-[60px] px-6 flex items-center justify-between max-w-[1200px] mx-auto">
         <Link href="/" className="text-lg font-bold text-gray-800">
           프론트엔드
         </Link>
