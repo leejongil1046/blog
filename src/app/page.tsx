@@ -29,13 +29,33 @@ export default function Home() {
             )}
             style={index !== 0 ? { borderTopStyle: "dashed" } : undefined}
           >
-            <div className="w-[20%] h-[150px] bg-gray-100"></div>
             <div
-              className="flex flex-col justify-center items-center w-[70%] gap-4
+              className={cls(
+                "flex flex-row justify-center items-center w-[30%] aspect-[4/3] border-1 border-gray-300 rounded-xl",
+                "transition-all duration-300 ease-in-out",
+                hoverIndex === index ? "border-gray-500" : ""
+              )}
+            >
+              <Image
+                src="/logo.svg" // public 디렉토리 기준
+                alt="Profile picture"
+                width={80}
+                height={80}
+                className=""
+              />
+            </div>
+            <div
+              className="flex flex-col justify-center items-center w-[60%] gap-4
                        transition-all duration-300 ease-in-out"
             >
               <div className="text-2xl">프로젝트 {index}</div>
-              <div className="w-[97%] h-1 border-dashed border-t-1 border-gray-300"></div>
+              <div
+                className={cls(
+                  "w-[97%] h-1 border-dashed border-t-1 border-gray-300",
+                  "transition-all duration-300 ease-in-out",
+                  hoverIndex === index ? "border-gray-500" : ""
+                )}
+              ></div>
               <div>프로젝트들에 대한 개요와 사용된 기술들을 설명합니다.</div>
             </div>
           </div>
