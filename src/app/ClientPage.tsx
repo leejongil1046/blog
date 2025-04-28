@@ -13,10 +13,96 @@ type Props = {
 
 export default function ClientPage({ items }: Props) {
   const [hoverIndex, setHoverIndex] = useState<number | null>(null);
-  // console.log("items: ", items);
+  console.log("items: ", items);
 
   return (
-    <div className="flex flex-col justify-start items-center mx-auto">
+    <div className="flex flex-col justify-start items-start max-w-[900px] mx-auto">
+      <div className="text-[25px]">프론트엔드</div>
+      <div className="grid grid-cols-6 gap-6">
+        <div className="flex flex-row justify-center items-center w-[100px] h-[100px]">
+          <Image
+            src="/javascript.svg"
+            alt="JavaScript Icon"
+            width={80}
+            height={80}
+            className={cls(
+              "transition-all duration-300 ease-in-out",
+              "grayscale opacity-60 hover:grayscale-0 hover:opacity-100 hover:scale-110"
+              // "hover:w-[80px] hover:h-[80px]"
+            )}
+          />
+        </div>
+        <div className="flex flex-row justify-center items-center w-[100px] h-[100px]">
+          <Image
+            src="/typescript.svg"
+            alt="JavaScript Icon"
+            width={80}
+            height={80}
+            className={cls(
+              "transition-all duration-300 ease-in-out",
+              "grayscale opacity-60 hover:grayscale-0 hover:opacity-100 hover:scale-110"
+              // "hover:w-[80px] hover:h-[80px]"
+            )}
+          />
+        </div>
+        <div className="flex flex-row justify-center items-center w-[100px] h-[100px]">
+          <Image
+            src="/html5.svg"
+            alt="HTML5 Icon"
+            width={80}
+            height={80}
+            className={cls(
+              "transition-all duration-300 ease-in-out",
+              "grayscale opacity-60 hover:grayscale-0 hover:opacity-100 hover:scale-110"
+              // "hover:w-[80px] hover:h-[80px]"
+            )}
+          />
+        </div>
+        <div className="flex flex-row justify-center items-center w-[100px] h-[100px]">
+          <Image
+            src="/css3.svg"
+            alt="CSS3 Icon"
+            width={80}
+            height={80}
+            className={cls(
+              "transition-all duration-300 ease-in-out",
+              "grayscale opacity-60 hover:grayscale-0 hover:opacity-100 hover:scale-110"
+              // "hover:w-[80px] hover:h-[80px]"
+            )}
+          />
+        </div>
+      </div>
+      <div className="text-[25px]">프로젝트</div>
+      <div className="grid grid-cols-6 gap-6">
+        <div className="flex flex-row justify-center items-center w-[100px] h-[100px]">
+          <Image
+            src="/forpaw.svg"
+            alt="ForPaw Icon"
+            width={80}
+            height={80}
+            className={cls(
+              "transition-all duration-300 ease-in-out",
+              "grayscale opacity-60 hover:grayscale-0 hover:opacity-100 hover:scale-110"
+              // "hover:w-[80px] hover:h-[80px]"
+            )}
+          />
+        </div>
+        <div className="flex flex-row justify-center items-center w-[100px] h-[100px]">
+          <Image
+            src="/llmn.svg"
+            alt="LLMN Icon"
+            width={80}
+            height={80}
+            className={cls(
+              "transition-all duration-300 ease-in-out",
+              "grayscale opacity-60 hover:grayscale-0 hover:opacity-100 hover:scale-110"
+              // "hover:w-[80px] hover:h-[80px]"
+            )}
+          />
+        </div>
+      </div>
+
+      <div className="text-[25px]">최신 글</div>
       <div className="flex flex-col justify-start items-center w-full max-w-[900px] bg-white">
         {items.map((item, index) => (
           <div
@@ -44,13 +130,23 @@ export default function ClientPage({ items }: Props) {
               )}
             >
               <Image
-                src="/logo.svg"
+                src="/llmn.svg"
                 alt="Profile picture"
                 width={80}
                 height={80}
+                className={cls(
+                  "transition-all duration-300 ease-in-out",
+                  hoverIndex === index ? "w-[100px] h-[100px]" : "blur-[0.5px]"
+                )}
               />
             </div>
-            <div className="flex flex-col justify-center items-center w-[60%] gap-4">
+            <div
+              className={cls(
+                "flex flex-col justify-center items-center w-[60%] gap-4",
+                "transition-all duration-300 ease-in-out",
+                hoverIndex === index ? "" : "blur-[0.5px]"
+              )}
+            >
               <div className="text-2xl">
                 {item.properties.title.title[0].plain_text}
               </div>
