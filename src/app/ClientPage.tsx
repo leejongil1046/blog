@@ -28,7 +28,6 @@ export default function ClientPage({ items }: Props) {
             className={cls(
               "transition-all duration-300 ease-in-out",
               "grayscale opacity-60 hover:grayscale-0 hover:opacity-100 hover:scale-110"
-              // "hover:w-[80px] hover:h-[80px]"
             )}
           />
         </div>
@@ -103,6 +102,56 @@ export default function ClientPage({ items }: Props) {
       </div>
 
       <div className="text-[25px]">최신 글</div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full max-w-[900px]">
+        {items.map((item, index) => (
+          <div
+            key={item.id}
+            className="flex flex-col justify-between items-start p-6 border border-gray-300 rounded-xl bg-white
+                 transition-all duration-300 ease-in-out
+                 grayscale opacity-60 hover:grayscale-0 hover:opacity-100
+                 hover:scale-105 hover:shadow-lg hover:border-gray-500
+                 aspect-[2/3] w-full"
+          >
+            {/* 상단 아이콘과 카테고리명 */}
+            <div className="flex items-baseline gap-2 mb-4">
+              <div className="w-[20px] h-[20px]">
+                <Image
+                  src="/javascript.svg"
+                  alt="JavaScript Icon"
+                  width={20}
+                  height={20}
+                />
+              </div>
+            </div>
+
+            <div className="flex flex-col justify-start items-start w-full h-full">
+              {/* 제목 */}
+              <div className="text-lg font-semibold mb-2 text-left">
+                {item.properties.title.title[0].plain_text}
+              </div>
+              {/* 설명 */}
+              <div
+                className="text-sm text-gray-500 mb-6 w-full leading-relaxed"
+                style={{
+                  textAlign: "left",
+                  hyphens: "auto",
+                  overflowWrap: "break-word", // ✅
+                  wordBreak: "break-word", // ✅
+                }}
+              >
+                {`다양한 JavaScript 기능과 라이브러리, 실전 프로젝트 예제를소개합니다. JavaScriptLibraryComponentExampleIsSuperVeryLongAndComplicated이 너무 길어요. 다양한 JavaScript 기능과 라이브러리, 실전 프로젝트 예제를 소개합니다.`}
+              </div>
+            </div>
+
+            {/* 날짜 */}
+            <div className="w-full text-xs text-gray-400 text-right">
+              2025-04-28
+            </div>
+          </div>
+        ))}
+      </div>
+
       <div className="flex flex-col justify-start items-center w-full max-w-[900px] bg-white">
         {items.map((item, index) => (
           <div
