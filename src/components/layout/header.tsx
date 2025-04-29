@@ -10,7 +10,7 @@ export default function Header() {
           Tani.dev
         </Link>
         <nav className="flex gap-6 text-sm text-gray-600">
-          <Link href="/blog" className="hover:text-black transition">
+          <Link href="/" className="hover:text-black transition">
             Home
           </Link>
           <Link href="/about" className="hover:text-black transition">
