@@ -2,6 +2,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import Image from "next/image";
 import { cls } from "@/utils/class-utils";
 
@@ -87,17 +88,19 @@ export default function HomePage({ items }: Props) {
           />
         </div>
         <div className="flex flex-row justify-center items-center w-[100px] h-[100px]">
-          <Image
-            src="/llmn.svg"
-            alt="LLMN Icon"
-            width={80}
-            height={80}
-            className={cls(
-              "transition-all duration-300 ease-in-out",
-              "grayscale opacity-60 hover:grayscale-0 hover:opacity-100 hover:scale-110"
-              // "hover:w-[80px] hover:h-[80px]"
-            )}
-          />
+          <Link href="/llmn">
+            <Image
+              src="/llmn.svg"
+              alt="LLMN Icon"
+              width={80}
+              height={80}
+              className={cls(
+                "transition-all duration-300 ease-in-out",
+                "grayscale opacity-60 hover:grayscale-0 hover:opacity-100 hover:scale-110"
+                // "hover:w-[80px] hover:h-[80px]"
+              )}
+            />
+          </Link>
         </div>
       </div>
 
@@ -117,14 +120,8 @@ export default function HomePage({ items }: Props) {
             <div className="flex items-baseline gap-2 mb-4">
               <div className="w-[20px] h-[20px]">
                 <Image
-                  src={
-                    "/" +
-                    item.properties.category.rich_text[0].plain_text +
-                    ".svg"
-                  }
-                  alt={
-                    item.properties.category.rich_text[0].plain_text + " icon"
-                  }
+                  src={"/" + item.properties.category.select.name + ".svg"}
+                  alt={item.properties.category.select.name + " icon"}
                   width={20}
                   height={20}
                 />
@@ -158,7 +155,7 @@ export default function HomePage({ items }: Props) {
         ))}
       </div>
 
-      <div className="flex flex-col justify-start items-center w-full max-w-[900px] bg-white">
+      {/* <div className="flex flex-col justify-start items-center w-full max-w-[900px] bg-white">
         {items.map((item, index) => (
           <div
             key={item.id}
@@ -215,7 +212,7 @@ export default function HomePage({ items }: Props) {
             </div>
           </div>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 }

@@ -13,7 +13,7 @@ export default function ListPage({ items, category }: Props) {
   const [hoverIndex, setHoverIndex] = useState<number | null>(null);
 
   return (
-    <div className="flex flex-col justify-start items-center w-full max-w-[900px] bg-white">
+    <div className="flex flex-col justify-start items-center w-full max-w-[900px] mx-auto">
       {/* 카테고리 이름 보여주기 */}
       <h1 className="text-3xl font-bold text-gray-700 mb-6">{category}</h1>
 
