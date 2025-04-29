@@ -11,7 +11,7 @@ type Props = {
 
 // 그리고 컴포넌트 내부에서 .properties.Name.title[0].plain_text로 꺼내기
 
-export default function ClientPage({ items }: Props) {
+export default function HomePage({ items }: Props) {
   const [hoverIndex, setHoverIndex] = useState<number | null>(null);
   console.log("items: ", items);
 
@@ -117,8 +117,14 @@ export default function ClientPage({ items }: Props) {
             <div className="flex items-baseline gap-2 mb-4">
               <div className="w-[20px] h-[20px]">
                 <Image
-                  src="/javascript.svg"
-                  alt="JavaScript Icon"
+                  src={
+                    "/" +
+                    item.properties.category.rich_text[0].plain_text +
+                    ".svg"
+                  }
+                  alt={
+                    item.properties.category.rich_text[0].plain_text + " icon"
+                  }
                   width={20}
                   height={20}
                 />
