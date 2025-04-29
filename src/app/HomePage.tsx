@@ -146,13 +146,13 @@ export default function HomePage({ items }: Props) {
                   wordBreak: "break-word", // ✅
                 }}
               >
-                {`다양한 JavaScript 기능과 라이브러리, 실전 프로젝트 예제를소개합니다. JavaScriptLibraryComponentExampleIsSuperVeryLongAndComplicated이 너무 길어요. 다양한 JavaScript 기능과 라이브러리, 실전 프로젝트 예제를 소개합니다.`}
+                {item.properties.content.rich_text[0].plain_text}
               </div>
             </div>
 
             {/* 날짜 */}
             <div className="w-full text-xs text-gray-400 text-right">
-              2025-04-28
+              {item.properties.date.date.start}
             </div>
           </div>
         ))}
